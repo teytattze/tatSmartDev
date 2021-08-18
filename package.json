@@ -7,10 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --config .prettierrc.json --write ./src/**.{ts,tsx}"
+    "format": "prettier --config .prettierrc.json --write ./src/*"
   },
   "dependencies": {
-    "@emotion/babel-preset-css-prop": "^11.2.0",
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
     "@headlessui/react": "^1.4.0",
