@@ -10,7 +10,10 @@ export function NavbarMenu() {
     <Menu as="div" className="z-10">
       {({ open }) => (
         <div className="relative">
-          <Menu.Button className="flex items-center">
+          <Menu.Button
+            aria-label="Toggle navigation menu"
+            className="flex items-center"
+          >
             {open ? (
               <IconButton render={(renderProps) => <div {...renderProps} />}>
                 <XIcon className="w-7 h-7" />

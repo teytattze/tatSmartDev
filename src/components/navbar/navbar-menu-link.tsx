@@ -21,7 +21,7 @@ export function NavbarMenuButton({ href, title }: NavbarMenuButtonProps) {
     <NextLink href={href} passHref>
       <a
         className={cx(
-          'inline-block w-full py-2 px-4 typography-button hover:bg-darkergrey/40 focus:bg-darkergrey/40 active:bg-darkergrey/60 active:text-primary',
+          'inline-block w-full py-2 px-4 typography-button hover:bg-darkergrey/40 focus:outline-none focus:bg-darkergrey/40 active:bg-darkergrey/60 active:text-primary',
           { 'text-primary': active },
         )}
         aria-label={title}

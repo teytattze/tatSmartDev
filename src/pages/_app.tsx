@@ -9,14 +9,14 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <>
       <NextSeo
-        title="tatSmartDev"
+        defaultTitle="tatSmartDev"
         description="This is my personal website which includes some of my information."
-        canonical="https://tatSmartDev.com"
+        canonical="https://www.tatsmartdev.com"
         additionalMetaTags={[
           {
             name: 'keywords',
             content:
-              'tatSmartDev, smartDev, smart developer, developer, web developer, web development, mobile developer, mobile development, software engineer, portfolio, mentor, mentoring',
+              'fullstack web developer, mobile development, software engineer, freelancer',
           },
           {
             name: 'author',
