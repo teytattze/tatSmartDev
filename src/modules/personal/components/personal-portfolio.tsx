@@ -70,7 +70,7 @@ export function PortfolioProjectItem({
     <>
       <FlipCard
         aria-label={title}
-        className="relative flex justify-center justify-self-center items-center w-64 h-64 cursor-pointer overflow-hidden md:w-72 md:h-72 lg:w-80 lg:h-80 bg-darkgrey rounded transition-all ease-in-out duration-300 border-b-2 border-transparent hover:border-primary focus:border-primary"
+        className="relative flex justify-center justify-self-center items-center w-64 h-64 cursor-pointer overflow-hidden md:w-72 md:h-72 lg:w-80 lg:h-80 bg-darkgrey rounded transition-all ease-in-out duration-300 border-b-2 border-transparent hover:border-primary outline-none focus:border-primary"
         frontContent={
           <FlipCard.Front className="w-full h-full flex items-center justify-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}

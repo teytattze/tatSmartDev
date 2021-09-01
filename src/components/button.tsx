@@ -36,7 +36,7 @@ export function Button({
   }
 
   const btnClasses = cx(
-    'inline-block select-none py-2 px-4 text-sm font-medium tracking-wide uppercase rounded transition-all ring-primary/30 focus:ring active:ring-4',
+    'inline-block select-none py-2 px-4 text-sm font-medium tracking-wide uppercase rounded transition-all ring-primary/30 focus:outline-none focus:ring active:ring-4',
     { 'pointer-events-none opacity-50': loading },
     variants[variant],
     className,

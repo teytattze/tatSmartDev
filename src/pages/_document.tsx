@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import Document, {
   DocumentContext,
   Html,
@@ -5,6 +6,15 @@ import Document, {
   Main,
   NextScript,
 } from 'next/document';
+
+const bodyStyles = css`
+  ::-moz-selection {
+    background: #fde68a;
+  }
+  ::selection {
+    background: #fde68a;
+  }
+`;
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -16,7 +26,10 @@ class MyDocument extends Document {
     return (
       <Html lang="en" className="dark">
         <Head />
-        <body className="outline-none focus:outline-none dark:text-offwhite dark:bg-darkergrey">
+        <body
+          className="focus:outline-none text-offwhite bg-darkergrey"
+          css={bodyStyles}
+        >
           <Main />
           <NextScript />
         </body>
