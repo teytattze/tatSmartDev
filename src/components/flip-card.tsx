@@ -20,13 +20,13 @@ export function FlipCardImpl({
   const [front, setFront] = React.useState<boolean>(true);
 
   return (
-    <motion.div
-      onHoverStart={() => setFront(false)}
-      onHoverEnd={() => setFront(true)}
+    <button
+      type="button"
+      onClick={() => setFront((prev) => !prev)}
       className={className}
     >
       {front ? frontContent : backContent}
-    </motion.div>
+    </button>
   );
 }
 
@@ -36,7 +36,7 @@ export function FlipCardFront({ children, className }: FlipCardChildProps) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ type: 'ease-in-out', duration: 0.3 }}
+      transition={{ type: 'easeInOut', duration: 0.3 }}
       className={className}
     >
       {children}
@@ -50,7 +50,7 @@ export function FlipCardBack({ children, className }: FlipCardChildProps) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ type: 'ease-in-out', duration: 0.3 }}
+      transition={{ type: 'easeInOut', duration: 0.3 }}
       className={className}
     >
       {children}

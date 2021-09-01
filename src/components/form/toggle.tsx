@@ -20,13 +20,13 @@ export function Toggle({
       checked={checked}
       onChange={onChange}
       className={cx(
-        'relative flex items-center justify-between h-6 w-12 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75',
+        'relative flex items-center justify-between h-6 w-12 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-300 focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75',
         { 'bg-primary': checked },
         { 'bg-actionwhite': !checked },
       )}
     >
       <span className="sr-only">{title}</span>
-      <MoonIcon className="w-5 h-5 text-white" />
+      <MoonIcon className="w-5 h-5 text-offwhite" />
       <span
         aria-hidden="true"
         className={cx(
@@ -35,7 +35,7 @@ export function Toggle({
           { 'translate-x-0': !checked },
         )}
       />
-      <SunIcon className="w-5 h-5 text-white" />
+      <SunIcon className="w-5 h-5 text-offwhite" />
     </Switch>
   );
 }

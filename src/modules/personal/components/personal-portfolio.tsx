@@ -69,6 +69,8 @@ export function PortfolioProjectItem({
   return (
     <>
       <FlipCard
+        aria-label={title}
+        className="relative flex justify-center justify-self-center items-center w-64 h-64 cursor-pointer overflow-hidden md:w-72 md:h-72 lg:w-80 lg:h-80 bg-darkgrey rounded transition-all ease-in-out duration-300 border-b-2 border-transparent hover:border-primary focus:border-primary"
         frontContent={
           <FlipCard.Front className="w-full h-full flex items-center justify-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -83,9 +85,7 @@ export function PortfolioProjectItem({
             </Button>
           </FlipCard.Back>
         }
-        className="flex overflow-hidden relative justify-center justify-self-center items-center w-64 h-64 group md:w-72 md:h-72 lg:w-80 lg:h-80 bg-darkgrey rounded-md"
       />
-
       <PortfolioProjectModal
         open={open}
         handleModal={handleModal}
@@ -128,10 +128,10 @@ export function PortfolioProjectModal({
         <div className="flex justify-center items-center w-full h-full px-8">
           <Transition.Child
             as={React.Fragment}
-            enter="ease-out duration-300"
+            enter="duration-200 ease-in-out"
             enterFrom="opacity-0"
             enterTo="opacity-100"
-            leave="ease-in duration-200"
+            leave="duration-500 ease-in-out"
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
@@ -140,14 +140,14 @@ export function PortfolioProjectModal({
 
           <Transition.Child
             as={React.Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-            enterTo="opacity-100 translate-y-0 sm:scale-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100 translate-y-0 sm:scale-100"
-            leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+            enter="duration-300 ease-in-out"
+            enterFrom="opacity-0 -translate-y-12"
+            enterTo="opacity-100 translate-y-0"
+            leave="duration-300 ease-in-out"
+            leaveFrom="opacity-100 translate-y-0"
+            leaveTo="opacity-0 -translate-y-12"
           >
-            <div className="overflow-hidden w-full max-w-screen-sm shadow-xl transform bg-darkgrey rounded-md">
+            <div className="overflow-hidden w-full max-w-screen-sm shadow-xl transform bg-darkgrey rounded">
               <div className="flex justify-between items-center p-4">
                 <Dialog.Title as="h1" className="typography-h5">
                   {title}

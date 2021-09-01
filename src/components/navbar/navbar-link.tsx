@@ -22,7 +22,7 @@ export function NavbarLink({ title, href }: NavbarLink) {
       <a className="inline-block relative">
         <p
           className={cx(
-            'text-sm uppercase font-medium tracking-wider cursor-pointer hover:text-primary focus:text-primary active:text-primary-dark before:absolute before:block before:w-0 before:h-0.5 before:rounded-full before:bg-primary before:transition-all before:ease-in-out before:duration-300 before:-bottom-0.5 hover:before:w-full focus:before:w-full active:before:bg-primary-dark',
+            'text-sm uppercase font-medium tracking-wider cursor-pointer hover:text-primary focus:text-primary active:text-primary-dark before:absolute before:block before:w-0 before:h-0.5 before:rounded before:bg-primary before:transition-all before:ease-in-out before:duration-300 before:-bottom-0.5 hover:before:w-full focus:before:w-full active:before:bg-primary-dark',
             { 'before:w-full': active },
           )}
         >

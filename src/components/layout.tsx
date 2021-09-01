@@ -17,8 +17,6 @@ const variants = {
 export function Layout({ children, route }: LayoutProps) {
   const { height } = useWindowDimensions();
 
-  console.log(route);
-
   return (
     <>
       {height && (
@@ -38,7 +36,7 @@ export function Layout({ children, route }: LayoutProps) {
               initial="hidden"
               animate="enter"
               exit="exit"
-              transition={{ type: 'linear', duration: 0.3 }}
+              transition={{ type: 'easeInOut', duration: 0.3 }}
             >
               {children}
             </motion.main>

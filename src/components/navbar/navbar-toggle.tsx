@@ -13,7 +13,7 @@ export function DarkModeToggle() {
       className="relative flex items-center justify-between h-6 w-12 px-0.5 bg-primary border-2 border-transparent rounded-full cursor-pointer focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75"
     >
       <span className="sr-only">Dark mode toggle</span>
-      <MoonIcon className="w-5 h-5 text-white" />
+      <MoonIcon className="w-5 h-5 text-offwhite" />
       <span
         aria-hidden="true"
         className={cx(
@@ -22,7 +22,7 @@ export function DarkModeToggle() {
           { 'translate-x-0': !dark },
         )}
       />
-      <SunIcon className="w-5 h-5 text-white" />
+      <SunIcon className="w-5 h-5 text-offwhite" />
     </Switch>
   );
 }

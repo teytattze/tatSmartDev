@@ -15,7 +15,7 @@ export function PersonalAbout() {
     <>
       <Section>
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-          <div className="relative rounded-full h-64 w-64 sm:h-80 sm:w-80 overflow-hidden justify-self-center md:w-full md:h-full md:rounded-md md:col-span-5 xl:col-span-4">
+          <div className="relative rounded-full h-64 w-64 sm:h-80 sm:w-80 overflow-hidden justify-self-center md:w-full md:h-full md:rounded md:col-span-5 xl:col-span-4">
             <Image
               priority
               layout="fill"
@@ -71,7 +71,7 @@ export function PersonalAbout() {
           {aboutServices.map((service) => (
             <div
               key={service.title}
-              className="flex flex-col space-y-4 w-full bg-darkgrey p-8 rounded-md"
+              className="flex flex-col space-y-4 w-full bg-darkgrey p-8 rounded"
             >
               <service.Icon className="w-12 h-12 text-primary" />
               <h1 className="typography-h5 leading-title">{service.title}</h1>

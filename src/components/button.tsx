@@ -71,10 +71,8 @@ export function Button({
 }
 
 const variants = {
-  contained:
-    'text-white border border-primary bg-primary hover:bg-primary/80 hover:border-primary/80',
+  contained: 'text-offwhite bg-primary hover:bg-primary/90',
   outlined:
-    'text-primary border border-primary hover:bg-primary hover:text-white',
-  ghost:
-    'text-primary border border-transparent hover:bg-primary/20 focus:bg-primary/20',
+    'text-primary border border-primary hover:bg-primary hover:text-offwhite',
+  ghost: 'text-primary hover:bg-primary/20 focus:bg-primary/20',
 };

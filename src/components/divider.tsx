@@ -6,9 +6,7 @@ export type DividerProps = React.ComponentPropsWithoutRef<'div'> & {
 };
 
 export function Divider({ className, color, ...props }: DividerProps) {
-  return (
-    <div className={cx('rounded-md', colors[color], className)} {...props} />
-  );
+  return <div className={cx('rounded', colors[color], className)} {...props} />;
 }
 
 type Colors = Record<NonNullable<DividerProps['color']>, string>;

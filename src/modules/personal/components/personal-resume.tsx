@@ -72,7 +72,7 @@ function ExprienceItem({
   desc,
 }: ExperienceItemProps) {
   return (
-    <div className="p-8 border-l-4 bg-darkgrey border-primary rounded-md">
+    <div className="p-8 border-l-4 bg-darkgrey border-primary rounded">
       <h1 className="typography-h5 leading-title">{title}</h1>
       <div className="mt-2">
         <h2 className="inline-block typography-caption typography-secondary leading-title mr-2">

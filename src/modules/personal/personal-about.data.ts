@@ -38,7 +38,7 @@ export const aboutPersonal: IAboutPersonal[] = [
   },
   {
     title: 'Email',
-    content: 'tattze.tey@tatsmartdev.com',
+    content: 'tattzetey@gmail.com',
   },
 ];
 

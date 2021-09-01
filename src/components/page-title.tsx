@@ -50,7 +50,7 @@ export function AnimatedBar() {
   const classes = `
     inline-block relative 
     mx-auto w-16 
-    h-1 rounded 
+    h-1 rounded
     bg-primary
   `;
 

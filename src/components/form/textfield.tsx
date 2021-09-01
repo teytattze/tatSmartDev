@@ -25,7 +25,7 @@ export const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
     ref,
   ) => {
     const classes = cx(
-      'appearance-none block px-2 pt-2 pb-1.5 w-full bg-darkgrey border-b-2 border-primary/0 rounded-md transition-colors ease-in-out focus:outline-none focus:border-primary active:outline-none active:border-primary',
+      'appearance-none block px-2 pt-2 pb-1.5 w-full bg-darkgrey border-b-2 border-primary/0 rounded transition-colors ease-in-out focus:outline-none focus:border-primary active:outline-none active:border-primary',
       { 'opacity-50 pointer-events-none;': submitting },
     );
 

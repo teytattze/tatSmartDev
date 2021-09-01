@@ -30,7 +30,7 @@ export const contactInfo: IContactInfo[] = [
   },
   {
     title: 'E-mail',
-    content: 'tattze.tey@tatsmartdev.com',
+    content: 'tattzetey@gmail.com',
     Icon: MailIcon,
   },
 ];
