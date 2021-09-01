@@ -8,11 +8,13 @@ import Document, {
 } from 'next/document';
 
 const bodyStyles = css`
-  ::-moz-selection {
-    background: #fde68a;
+  -webkit-tap-highlight-color: transparent;
+
+  &::-moz-selection {
+    background-color: rgba(251, 191, 36, 0.5);
   }
-  ::selection {
-    background: #fde68a;
+  &::selection {
+    background-color: rgba(251, 191, 36, 0.5);
   }
 `;
 
