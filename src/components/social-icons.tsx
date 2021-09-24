@@ -3,6 +3,13 @@ import FacebookIcon from '/public/social-icons/facebook.svg';
 import LinkedInIcon from '/public/social-icons/linkedin.svg';
 import InstagramIcon from '/public/social-icons/instagram.svg';
 import GithubIcon from '/public/social-icons/github.svg';
+import {
+  PERSONAL_FACEBOOK_LINK,
+  PERSONAL_GITHUB_LINK,
+  PERSONAL_INSTAGRAM_LINK,
+  PERSONAL_LINKEDIN_LINK,
+  PERSONAL_WHATSAPP_LINK,
+} from 'src/modules/personal/personal.const';
 
 export function SocialIcons() {
   const socialIconStyle = `
@@ -13,45 +20,49 @@ export function SocialIcons() {
     group-hover:text-primary group-focus:text-primary
   `;
 
+  const linkStyle = `
+    group outline-none
+  `;
+
   return (
     <>
       <a
-        href="https://github.com/teytattze"
+        href={PERSONAL_GITHUB_LINK}
         target="blank"
         aria-label="Github link"
-        className="group outline-none"
+        className={linkStyle}
       >
         <GithubIcon className={socialIconStyle} />
       </a>
       <a
-        href="https://api.whatsapp.com/send?phone=60167178068"
+        href={PERSONAL_WHATSAPP_LINK}
         target="blank"
         aria-label="Whatsapp link"
-        className="group outline-none"
+        className={linkStyle}
       >
         <WhatsappIcon className={socialIconStyle} />
       </a>
       <a
-        href="https://www.linkedin.com/in/tat-tze-tey-530238216/"
+        href={PERSONAL_LINKEDIN_LINK}
         target="blank"
         aria-label="LinkedIn link"
-        className="group outline-none"
+        className={linkStyle}
       >
         <LinkedInIcon className={socialIconStyle} />
       </a>
       <a
-        href="https://www.facebook.com/tattze.tey"
+        href={PERSONAL_FACEBOOK_LINK}
         target="blank"
         aria-label="Facebook link"
-        className="group outline-none"
+        className={linkStyle}
       >
         <FacebookIcon className={socialIconStyle} />
       </a>
       <a
-        href="https://www.instagram.com/tattzetey/"
+        href={PERSONAL_INSTAGRAM_LINK}
         target="blank"
         aria-label="Instagram link"
-        className="group outline-none"
+        className={linkStyle}
       >
         <InstagramIcon className={socialIconStyle} />
       </a>
