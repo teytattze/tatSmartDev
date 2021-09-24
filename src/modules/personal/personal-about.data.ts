@@ -7,6 +7,12 @@ import {
   DeviceMobileIcon,
   SupportIcon,
 } from '@heroicons/react/solid';
+import {
+  PERSONAL_AGE,
+  PERSONAL_EMAIL,
+  PERSONAL_FULLNAME,
+  PERSONAL_LOCATION,
+} from './personal.const';
 
 export interface IAboutDesc {
   title: string;
@@ -14,8 +20,9 @@ export interface IAboutDesc {
 }
 
 export const aboutDesc: IAboutDesc = {
-  title: "I'm Tat Tze Tey, a Software Engineer and Fullstack Web Developer",
-  desc: 'I am from Malaysia and I also have been building websites for several years, which comply with the latest trends and technologies. I provide the solution to help businesses or individuals by converting their vision and ideas into applications. Feel free to DM me for further equiries!',
+  title:
+    "I'm Liam Tat Tze Tey, a Software Engineer and Fullstack Web Developer",
+  desc: "I was born in Malaysia, but I'm living in London, UK. In the past two years, I have been learning web and mobile app development, which comply with the latest trends and technologies. I provide the solution to help businesses or individuals by converting their vision and ideas into applications. Feel free to DM me for further equiries!",
 };
 
 export interface IAboutPersonal {
@@ -26,19 +33,19 @@ export interface IAboutPersonal {
 export const aboutPersonal: IAboutPersonal[] = [
   {
     title: 'Name',
-    content: 'Tat Tze Tey',
+    content: PERSONAL_FULLNAME,
   },
   {
     title: 'Age',
-    content: '21',
+    content: PERSONAL_AGE,
   },
   {
     title: 'From',
-    content: 'Selangor, Malaysia',
+    content: PERSONAL_LOCATION,
   },
   {
     title: 'Email',
-    content: 'tattzetey@gmail.com',
+    content: PERSONAL_EMAIL,
   },
 ];
 

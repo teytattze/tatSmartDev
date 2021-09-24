@@ -48,16 +48,20 @@ export interface IResumeSkill {
 
 export const resumeSkills: IResumeSkill[] = [
   {
-    title: 'HTML/CSS',
+    title: 'HTML 5',
+    progress: 95,
+  },
+  {
+    title: 'CSS 3',
     progress: 95,
   },
   {
     title: 'JavaScript',
-    progress: 88,
+    progress: 90,
   },
   {
     title: 'TypeScript',
-    progress: 85,
+    progress: 90,
   },
   {
     title: 'Golang',
@@ -73,19 +77,31 @@ export const resumeSkills: IResumeSkill[] = [
   },
   {
     title: 'ReactJS',
-    progress: 90,
+    progress: 95,
   },
   {
     title: 'NextJS',
-    progress: 85,
+    progress: 95,
+  },
+  {
+    title: 'SolidJS',
+    progress: 80,
+  },
+  {
+    title: 'Flutter',
+    progress: 70,
   },
   {
     title: 'ExpressJS',
-    progress: 80,
+    progress: 90,
   },
   {
     title: 'NestJS',
-    progress: 80,
+    progress: 90,
+  },
+  {
+    title: 'Firebase',
+    progress: 85,
   },
   {
     title: 'SQL',

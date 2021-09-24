@@ -5,6 +5,12 @@ import {
   PhoneIcon,
   UserIcon,
 } from '@heroicons/react/solid';
+import {
+  PERSONAL_EMAIL,
+  PERSONAL_FULLNAME,
+  PERSONAL_LOCATION,
+  PERSONAL_MOBILE_NO,
+} from './personal.const';
 
 export interface IContactInfo {
   title: string;
@@ -15,22 +21,22 @@ export interface IContactInfo {
 export const contactInfo: IContactInfo[] = [
   {
     title: 'Name',
-    content: 'Tat Tze Tey',
+    content: PERSONAL_FULLNAME,
     Icon: UserIcon,
   },
   {
     title: 'Location',
-    content: 'Selangor, Malaysia',
+    content: PERSONAL_LOCATION,
     Icon: LocationMarkerIcon,
   },
   {
     title: 'Mobile No',
-    content: '+60 16 717 8068',
+    content: PERSONAL_MOBILE_NO,
     Icon: PhoneIcon,
   },
   {
     title: 'E-mail',
-    content: 'tattzetey@gmail.com',
+    content: PERSONAL_EMAIL,
     Icon: MailIcon,
   },
 ];
