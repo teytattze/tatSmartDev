@@ -8,7 +8,7 @@ export type RenderIconButtonProps = {
 
 export type IconButtonProps = React.ComponentPropsWithoutRef<'button'> & {
   children: React.ReactNode;
-  className: string;
+  className?: string;
   render?: (
     renderProps: RenderIconButtonProps,
   ) => React.ReactElement<any, any> | null;
