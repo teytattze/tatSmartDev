@@ -3,7 +3,7 @@ import cx from 'clsx';
 import { Container } from '../container';
 import { NavbarLink } from './navbar-link';
 import { NavbarMenu } from './navbar-menu';
-import { routes } from 'src/shared/consts/core.const';
+import { routes } from '../../shared/consts/core.const';
 
 export function Navbar() {
   const [classes, setClasses] = React.useState<string>(

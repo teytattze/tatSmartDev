@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { allowCors } from 'src/lib/allow-cors.middleware';
-import { createContactFormTemplate, sendMail } from 'src/modules/mail';
+import { allowCors } from '../../lib/allow-cors.middleware';
+import { createContactFormTemplate, sendMail } from '../../modules/mail';
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {

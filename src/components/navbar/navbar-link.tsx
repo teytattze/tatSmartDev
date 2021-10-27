@@ -2,7 +2,7 @@ import * as React from 'react';
 import cx from 'clsx';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
-import { checkActivePath } from 'src/lib/check-active-path.util';
+import { checkActivePath } from '../../lib/check-active-path.util';
 
 export type NavbarLink = {
   title: string;

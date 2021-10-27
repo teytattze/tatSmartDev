@@ -1,6 +1,6 @@
 import { NextSeo } from 'next-seo';
-import { Container } from 'src/components/container';
-import { Divider } from 'src/components/divider';
+import { Container } from '../components/container';
+import { Divider } from '../components/divider';
 
 function ErrorPage() {
   return (

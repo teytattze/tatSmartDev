@@ -1,7 +1,7 @@
 import { Menu, Transition } from '@headlessui/react';
 import { MenuAlt3Icon, XIcon } from '@heroicons/react/solid';
 import * as React from 'react';
-import { routes } from 'src/shared/consts/core.const';
+import { routes } from '../../shared/consts/core.const';
 import { IconButton } from '../icon-button';
 import { NavbarMenuButton } from './navbar-menu-link';
 

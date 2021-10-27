@@ -9,7 +9,7 @@ import {
   PERSONAL_INSTAGRAM_LINK,
   PERSONAL_LINKEDIN_LINK,
   PERSONAL_WHATSAPP_LINK,
-} from 'src/modules/personal/personal.const';
+} from '../modules/personal/personal.const';
 
 export function SocialIcons() {
   const socialIconStyle = `

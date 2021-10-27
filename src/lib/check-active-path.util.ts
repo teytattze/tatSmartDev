@@ -1,4 +1,4 @@
-import { BASE_URL } from 'src/shared/consts/config.const';
+import { BASE_URL } from '../shared/consts/config.const';
 
 export const checkActivePath = (current: string, href: string) => {
   const currentBase = current.split('/')[1];
