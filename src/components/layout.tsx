@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useWindowDimensions } from 'src/shared/hooks/use-window-dimensions';
 import { Navbar } from './navbar';
 
 export type LayoutProps = {
@@ -15,34 +14,25 @@ const variants = {
 };
 
 export function Layout({ children, route }: LayoutProps) {
-  const { height } = useWindowDimensions();
-
   return (
-    <>
-      {height && (
-        <div
-          className="relative w-full overflow-y-auto"
-          style={{ minHeight: `${height}px` }}
+    <div className="relative w-full overflow-y-auto min-h-screen">
+      <Navbar />
+      <AnimatePresence
+        exitBeforeEnter
+        initial={false}
+        onExitComplete={() => window.scrollTo(0, 0)}
+      >
+        <motion.main
+          key={route}
+          variants={variants}
+          initial="hidden"
+          animate="enter"
+          exit="exit"
+          transition={{ type: 'easeInOut', duration: 0.3 }}
         >
-          <Navbar />
-          <AnimatePresence
-            exitBeforeEnter
-            initial={false}
-            onExitComplete={() => window.scrollTo(0, 0)}
-          >
-            <motion.main
-              key={route}
-              variants={variants}
-              initial="hidden"
-              animate="enter"
-              exit="exit"
-              transition={{ type: 'easeInOut', duration: 0.3 }}
-            >
-              {children}
-            </motion.main>
-          </AnimatePresence>
-        </div>
-      )}
-    </>
+          {children}
+        </motion.main>
+      </AnimatePresence>
+    </div>
   );
 }

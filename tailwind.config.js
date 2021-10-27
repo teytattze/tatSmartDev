@@ -107,6 +107,7 @@ module.exports = {
     },
     fontFamily: {
       sans: ['Poppins', 'sans-serif'],
+      heading: ['Montserrat Alternates', 'sans-serif'],
     },
     extend: {
       colors: {
@@ -145,9 +146,6 @@ module.exports = {
           DEFAULT: colors.yellow[500],
           dark: colors.yellow[600],
         },
-      },
-      fontFamily: {
-        heading: ['Montserrat Alternates', 'sans-serif'],
       },
     },
   },

@@ -27,7 +27,12 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en" className="dark">
-        <Head />
+        <Head>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&family=Poppins:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+          />
+        </Head>
         <body
           className="focus:outline-none text-offwhite bg-darkergrey"
           css={bodyStyles}

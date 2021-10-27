@@ -8,6 +8,6 @@ export const submitContactForm = async (value: IContactFormValue) => {
   try {
     return await axios.post(baseUrl, value);
   } catch (error) {
-    return error.response;
+    return (error as any).response;
   }
 };
