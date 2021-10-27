@@ -1,4 +1,3 @@
-import { css } from '@emotion/react';
 import Document, {
   DocumentContext,
   Html,
@@ -6,17 +5,6 @@ import Document, {
   Main,
   NextScript,
 } from 'next/document';
-
-const bodyStyles = css`
-  -webkit-tap-highlight-color: transparent;
-
-  &::-moz-selection {
-    background-color: rgba(251, 191, 36, 0.5);
-  }
-  &::selection {
-    background-color: rgba(251, 191, 36, 0.5);
-  }
-`;
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -26,17 +14,14 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="en" className="dark">
+      <Html lang="en">
         <Head>
           <link
             href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&family=Poppins:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
           />
         </Head>
-        <body
-          className="focus:outline-none text-offwhite bg-darkergrey"
-          css={bodyStyles}
-        >
+        <body>
           <Main />
           <NextScript />
         </body>

@@ -49,3 +49,19 @@
     @apply leading-relaxed;
   }
 }
+
+.projectsContainer {
+  grid-template-columns: repeat(1, minmax(0, 16rem));
+}
+
+@media (min-width: 768px) {
+  .projectsContainer {
+    grid-template-columns: repeat(2, minmax(0, 18rem));
+  }
+}
+
+@media (min-width: 1024px) {
+  .projectsContainer {
+    grid-template-columns: repeat(3, minmax(0, 20rem));
+  }
+}

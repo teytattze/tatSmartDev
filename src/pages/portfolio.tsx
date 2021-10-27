@@ -1,4 +1,3 @@
-import { css } from '@emotion/react';
 import * as React from 'react';
 import cx from 'clsx';
 import { NextSeo } from 'next-seo';
@@ -15,16 +14,6 @@ import { IconButton } from '../components/icon-button';
 import { XIcon } from '@heroicons/react/solid';
 import { Divider } from '../components/divider';
 
-const projectsContainer = css`
-  grid-template-columns: repeat(1, minmax(0, 16rem));
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(2, minmax(0, 18rem));
-  }
-  @media (min-width: 1024px) {
-    grid-template-columns: repeat(3, minmax(0, 20rem));
-  }
-`;
-
 function PortfolioPage() {
   return (
     <>
@@ -36,8 +25,8 @@ function PortfolioPage() {
         <Section>
           {portfolioProjects.length ? (
             <div
-              className={cx('grid justify-center gap-8')}
-              css={projectsContainer}
+              className={cx('grid justify-center gap-8 projectsContainer')}
+              // css={projectsContainer}
             >
               {portfolioProjects.map((project) => (
                 <PortfolioProjectItem
