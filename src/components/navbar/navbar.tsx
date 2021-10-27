@@ -20,7 +20,7 @@ export function Navbar() {
     setClasses('bg-transparent border-transparent');
   };
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);

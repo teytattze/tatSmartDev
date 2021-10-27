@@ -10,20 +10,23 @@ export function NavbarMenu() {
     <Menu as="div" className="z-10">
       {({ open }) => (
         <div className="relative">
-          <Menu.Button
-            aria-label="Toggle navigation menu"
-            className="flex items-center"
-          >
-            {open ? (
-              <IconButton render={(renderProps) => <div {...renderProps} />}>
-                <XIcon className="w-7 h-7" />
-              </IconButton>
-            ) : (
-              <IconButton render={(renderProps) => <div {...renderProps} />}>
-                <MenuAlt3Icon className="w-7 h-7" />
-              </IconButton>
-            )}
-          </Menu.Button>
+          {open ? (
+            <IconButton
+              aria-label="Close navigation menu"
+              className="flex items-center"
+              render={(renderProps) => <Menu.Button {...renderProps} />}
+            >
+              <XIcon className="w-7 h-7" />
+            </IconButton>
+          ) : (
+            <IconButton
+              aria-label="Open navigation menu"
+              className="flex items-center"
+              render={(renderProps) => <Menu.Button {...renderProps} />}
+            >
+              <MenuAlt3Icon className="w-7 h-7" />
+            </IconButton>
+          )}
           <Transition
             as={React.Fragment}
             enter="transition duration-300 ease-in-out"

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import cx from 'clsx';
 
 export type RenderIconButtonProps = {
   className: string;
@@ -7,14 +8,22 @@ export type RenderIconButtonProps = {
 
 export type IconButtonProps = React.ComponentPropsWithoutRef<'button'> & {
   children: React.ReactNode;
+  className: string;
   render?: (
     renderProps: RenderIconButtonProps,
   ) => React.ReactElement<any, any> | null;
 };
 
-export function IconButton({ children, render, ...props }: IconButtonProps) {
-  const classes =
-    'transition-colors cursor-pointer hover:text-primary focus:text-primary active:text-primary-dark';
+export function IconButton({
+  children,
+  render,
+  className,
+  ...props
+}: IconButtonProps) {
+  const classes = cx(
+    'transition-colors cursor-pointer hover:text-primary focus:text-primary active:text-primary-dark',
+    className,
+  );
 
   const content = <>{children}</>;
 
