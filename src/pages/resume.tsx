@@ -89,9 +89,9 @@ function ExprienceItem({
         <h2 className="inline-block typography-caption typography-secondary leading-title mr-2">
           {location}
         </h2>
-        <h6 className="inline-block typography-caption typography-secondary leading-title">
+        <h3 className="inline-block typography-caption typography-secondary leading-title">
           {duration}
-        </h6>
+        </h3>
       </div>
       <Divider className="w-12 h-0.5 my-4" color="primary" />
       <p className="typography-small typography-secondary leading-paragraph">
