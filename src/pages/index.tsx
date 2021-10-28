@@ -22,7 +22,7 @@ function HomePage() {
         description="A home page for my personal website. It includes navigation and social media links."
       />
       <section
-        className="relative w-full bg-black select-none shadow-xl"
+        className="relative w-full select-none shadow-xl"
         style={{ height: `${height}px` }}
       >
         <Image

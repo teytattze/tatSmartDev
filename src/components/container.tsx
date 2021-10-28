@@ -3,13 +3,13 @@ import cx from 'clsx';
 export type ContainerProps = {
   children: React.ReactNode;
   className?: string;
-  size?: 'default' | 'small';
+  size?: 'xl' | 'lg' | 'md';
 };
 
 export function Container({
   children,
   className,
-  size = 'default',
+  size = 'xl',
 }: ContainerProps) {
   const classes = cx('w-full', className);
   return (
@@ -20,6 +20,7 @@ export function Container({
 }
 
 const sizeByClasses = {
-  default: 'max-w-screen-xl',
-  small: 'max-w-screen-lg',
+  xl: 'max-w-screen-xl',
+  lg: 'max-w-screen-lg',
+  md: 'max-w-screen-md',
 };

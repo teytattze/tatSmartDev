@@ -51,7 +51,7 @@ function ContactPage() {
       />
       <Page title="Get in Touch" subtitle="Feel free to contact me anytimes">
         <Section>
-          <Container size="small" className="space-y-4">
+          <Container size="md" className="space-y-4">
             <form
               className="space-y-8"
               onSubmit={handleSubmit(handleSend)}
