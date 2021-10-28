@@ -15,19 +15,11 @@ export const routes: IRoute[] = [
     href: `${BASE_URL}/about`,
   },
   {
-    title: 'Resume',
-    href: `${BASE_URL}/resume`,
-  },
-  {
-    title: 'Portfolio',
-    href: `${BASE_URL}/portfolio`,
+    title: 'Projects',
+    href: `${BASE_URL}/projects`,
   },
   {
     title: 'Contact',
     href: `${BASE_URL}/contact`,
   },
-  // {
-  //   title: 'Blog',
-  //   href: `${BASE_URL}/blog`,
-  // },
 ];

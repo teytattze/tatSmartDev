@@ -1,4 +1,4 @@
-export interface IPortfolioProject {
+export interface IProject {
   title: string;
   imgUrl: string;
   link: string;
@@ -6,7 +6,7 @@ export interface IPortfolioProject {
   technologies: string[];
 }
 
-export const portfolioProjects: IPortfolioProject[] = [
+export const projects: IProject[] = [
   {
     title: 'Google Clone',
     imgUrl: '/images/projects/google.svg',

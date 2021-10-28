@@ -9,12 +9,11 @@ import {
   formValidation,
   IContactFormValue,
   ResponseStatus,
-} from '../modules/personal/personal-contact.form';
-import { submitContactForm } from '../services/api-personal.service';
+} from '../modules/contact/contact.lib';
+import { submitContactForm } from '../modules/contact/contact.service';
 import { Button } from '../components/button';
 import { TextField } from '../components/form/textfield';
-import { contactInfo } from '../modules/personal/personal-contact.data';
-import { Divider } from '../components/divider';
+import { Container } from '../components/container';
 
 function ContactPage() {
   const {
@@ -52,63 +51,62 @@ function ContactPage() {
       />
       <Page title="Get in Touch" subtitle="Feel free to contact me anytimes">
         <Section>
-          <div className="grid grid-cols-1 gap-16 lg:grid-cols-12 lg:gap-8">
-            <div className="w-full lg:col-span-7 space-y-4">
-              <h1 className="typography-h4 leading-title">Message Me</h1>
-              <form
-                className="space-y-8"
-                onSubmit={handleSubmit(handleSend)}
-                autoComplete="off"
-              >
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <Container size="small" className="space-y-4">
+            <form
+              className="space-y-8"
+              onSubmit={handleSubmit(handleSend)}
+              autoComplete="off"
+            >
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <TextField
+                  id="name"
+                  label="Name"
+                  placeholder="Name"
+                  error={errors.name?.message}
+                  submitting={loading}
+                  autoComplete="none"
+                  {...register('name', formValidation.name)}
+                />
+                <TextField
+                  id="email"
+                  type="email"
+                  label="Email"
+                  placeholder="Email"
+                  error={errors.email?.message}
+                  submitting={loading}
+                  autoComplete="none"
+                  {...register('email', formValidation.email)}
+                />
+                <div className="sm:col-span-2">
                   <TextField
-                    id="name"
-                    label="Name"
-                    placeholder="Name"
-                    error={errors.name?.message}
+                    id="subject"
+                    label="Subject"
+                    placeholder="Subject"
+                    error={errors.subject?.message}
                     submitting={loading}
                     autoComplete="none"
-                    {...register('name', formValidation.name)}
+                    {...register('subject', formValidation.subject)}
                   />
-                  <TextField
-                    id="email"
-                    type="email"
-                    label="Email"
-                    placeholder="Email"
-                    error={errors.email?.message}
-                    submitting={loading}
-                    autoComplete="none"
-                    {...register('email', formValidation.email)}
-                  />
-                  <div className="sm:col-span-2">
-                    <TextField
-                      id="subject"
-                      label="Subject"
-                      placeholder="Subject"
-                      error={errors.subject?.message}
-                      submitting={loading}
-                      autoComplete="none"
-                      {...register('subject', formValidation.subject)}
-                    />
-                  </div>
-                  <div className="sm:col-span-2">
-                    <TextField
-                      label="Message"
-                      error={errors.message?.message}
-                      submitting={loading}
-                      render={(renderProps) => (
-                        <textarea
-                          id="message"
-                          placeholder="Message"
-                          rows={6}
-                          className={renderProps.className}
-                          autoComplete="none"
-                          {...register('message', formValidation.message)}
-                        />
-                      )}
-                    />
-                  </div>
                 </div>
+                <div className="sm:col-span-2">
+                  <TextField
+                    label="Message"
+                    error={errors.message?.message}
+                    submitting={loading}
+                    render={(renderProps) => (
+                      <textarea
+                        id="message"
+                        placeholder="Message"
+                        rows={6}
+                        className={renderProps.className}
+                        autoComplete="none"
+                        {...register('message', formValidation.message)}
+                      />
+                    )}
+                  />
+                </div>
+              </div>
+              <div className="w-full text-center">
                 <Button
                   type="submit"
                   loading={loading}
@@ -118,45 +116,22 @@ function ContactPage() {
                 >
                   Submit
                 </Button>
-              </form>
-              {status && (
-                <p
-                  className={cx(
-                    'text-xs font-medium',
-                    {
-                      'text-success': status === ResponseStatus.SUCCESS,
-                    },
-                    { 'text-error': status === ResponseStatus.FAIL },
-                  )}
-                >
-                  {message}
-                </p>
-              )}
-            </div>
-            <div className="w-full space-y-4 lg:col-span-5 lg:mt-0 lg:px-4">
-              <h1 className="typography-h4 leading-title">Contact Info</h1>
-              <p className="typography-p typography-secondary leading-desc">
-                Always available for freelance work if the right project comes
-                along, Feel free to contact me!
+              </div>
+            </form>
+            {status && (
+              <p
+                className={cx(
+                  'text-xs font-medium',
+                  {
+                    'text-success': status === ResponseStatus.SUCCESS,
+                  },
+                  { 'text-error': status === ResponseStatus.FAIL },
+                )}
+              >
+                {message}
               </p>
-              <ul className="w-full">
-                {contactInfo.map((info) => (
-                  <li key={info.title} className="flex items-center">
-                    <info.Icon className="w-8 h-8 text-primary" />
-                    <Divider className="w-0.5 h-16 mx-8" color="secondary" />
-                    <div className="">
-                      <h1 className="typography-p leading-desc">
-                        {info.title}
-                      </h1>
-                      <p className="typography-small typography-secondary">
-                        {info.content}
-                      </p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+            )}
+          </Container>
         </Section>
       </Page>
     </>

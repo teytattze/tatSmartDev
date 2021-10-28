@@ -109,12 +109,18 @@ module.exports = {
       sans: ['Poppins', 'sans-serif'],
       heading: ['Montserrat Alternates', 'sans-serif'],
     },
+    screens: {
+      xs: '384px',
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1536px',
+    },
     extend: {
       colors: {
-        black: '#000000',
         white: '#FFFFFF',
-        offwhite: '#FAFAFA',
-        darkergrey: '#171717',
+        black: '#000000',
         darkgrey: '#262626',
         mediumgrey: '#525252',
         lightgrey: '#737373',

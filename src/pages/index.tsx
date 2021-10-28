@@ -1,18 +1,30 @@
+import * as React from 'react';
 import { NextSeo } from 'next-seo';
 import Image from 'next/image';
 import Typewriter from 'typewriter-effect';
 import { Container } from '../components/container';
 import { Divider } from '../components/divider';
 import { SocialIcons } from '../components/social-icons';
+import { roles } from '../data/personal/job-roles.data';
 
 function HomePage() {
+  const [height, setHeight] = React.useState<number>();
+
+  React.useEffect(() => {
+    const screenHeight = window.innerHeight;
+    setHeight(screenHeight);
+  }, []);
+
   return (
     <>
       <NextSeo
         title="tatSmartDev - Home"
         description="A home page for my personal website. It includes navigation and social media links."
       />
-      <section className="relative w-full select-none shadow-xl h-screen">
+      <section
+        className="relative w-full select-none shadow-xl"
+        style={{ height: `${height}px` }}
+      >
         <Image
           priority
           className="z-[-1]"
@@ -26,21 +38,15 @@ function HomePage() {
         />
         <Container className="relative h-full">
           <div className="h-full flex flex-col justify-center space-y-8 text-center">
-            <h1 className="text-5xl text-offwhite font-semibold tracking-wide uppercase md:text-7xl">
+            <h1 className="text-5xl text-white font-semibold tracking-wide uppercase md:text-7xl">
               Tat Tze Tey
             </h1>
             <div className="flex justify-center space-x-2 text-xl text-center sm:space-x-3 md:space-x-4 md:text-3xl">
-              <h2 className="text-offwhite">I am a</h2>
+              <h2 className="text-white">I am a</h2>
               <span className="text-primary">
                 <Typewriter
                   options={{
-                    strings: [
-                      'Software Engineer',
-                      'Web Developer',
-                      'Mobile Developer',
-                      'Freelancer',
-                      'Coding Mentor',
-                    ],
+                    strings: roles,
                     autoStart: true,
                     loop: true,
                   }}

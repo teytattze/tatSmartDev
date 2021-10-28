@@ -26,16 +26,16 @@ export function Toggle({
       )}
     >
       <span className="sr-only">{title}</span>
-      <MoonIcon className="w-5 h-5 text-offwhite" />
+      <MoonIcon className="w-5 h-5 text-white" />
       <span
         aria-hidden="true"
         className={cx(
-          'absolute top-0 left-0 h-5 w-5 bg-offwhite pointer-events-none rounded-full shadow-lg ring-0 transition ease-in-out duration-300',
+          'absolute top-0 left-0 h-5 w-5 bg-white pointer-events-none rounded-full shadow-lg ring-0 transition ease-in-out duration-300',
           { 'translate-x-6': checked },
           { 'translate-x-0': !checked },
         )}
       />
-      <SunIcon className="w-5 h-5 text-offwhite" />
+      <SunIcon className="w-5 h-5 text-white" />
     </Switch>
   );
 }

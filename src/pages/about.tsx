@@ -5,11 +5,9 @@ import { Divider } from '../components/divider';
 import { Page } from '../components/page';
 import { Section } from '../components/section';
 import { SocialIcons } from '../components/social-icons';
-import {
-  aboutDesc,
-  aboutPersonal,
-  aboutServices,
-} from '../modules/personal/personal-about.data';
+import { details } from '../data/personal/details.data';
+import { introduction } from '../data/personal/introduction.data';
+import { skills } from '../data/skills.data';
 import { BASE_URL } from '../shared/consts/config.const';
 
 function AboutPage() {
@@ -36,21 +34,21 @@ function AboutPage() {
               <div className="space-y-4">
                 <h1 className="typography-h5 text-primary">Who am I?</h1>
                 <h2 className="typography-h3 leading-title">
-                  {aboutDesc.title}
+                  {introduction.title}
                 </h2>
                 <p className="typography-p typography-secondary leading-paragraph">
-                  {aboutDesc.desc}
+                  {introduction.desc}
                 </p>
               </div>
               <Divider className="w-full h-0.5" color="secondary" />
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                {aboutPersonal.map((personalInfo) => (
-                  <div key={personalInfo.title} className="flex space-x-4">
+                {details.map((detail) => (
+                  <div key={detail.title} className="flex space-x-4">
                     <h1 className="typography-p col-span-2">
-                      {personalInfo.title} :
+                      {detail.title} :
                     </h1>
                     <p className="typography-p typography-secondary col-span-9">
-                      {personalInfo.content}
+                      {detail.content}
                     </p>
                   </div>
                 ))}
@@ -75,18 +73,24 @@ function AboutPage() {
             </div>
           </div>
         </Section>
-        <Section title="My Services" subtitle="Services I offer to my clients">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {aboutServices.map((service) => (
+        <Section title="My Skills" subtitle="Technologies that I used">
+          <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xs:gap-4 sm:gap-8">
+            {skills.map((skill, index) => (
               <div
-                key={service.title}
-                className="flex flex-col space-y-4 w-full bg-darkgrey p-8 rounded"
+                key={index}
+                className="flex flex-col items-center justify-center space-y-2"
               >
-                <service.Icon className="w-12 h-12 text-primary" />
-                <h1 className="typography-h5 leading-title">{service.title}</h1>
-                <Divider className="w-12 h-0.5" color="primary" />
+                <div className="w-full p-6">
+                  <Image
+                    src={skill.imageUrl}
+                    alt={skill.title}
+                    layout="responsive"
+                    width="24"
+                    height="24"
+                  />
+                </div>
                 <p className="typography-p typography-secondary leading-desc">
-                  {service.content}
+                  {skill.title}
                 </p>
               </div>
             ))}

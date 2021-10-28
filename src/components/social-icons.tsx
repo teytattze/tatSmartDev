@@ -4,17 +4,17 @@ import LinkedInIcon from '/public/social-icons/linkedin.svg';
 import InstagramIcon from '/public/social-icons/instagram.svg';
 import GithubIcon from '/public/social-icons/github.svg';
 import {
-  PERSONAL_FACEBOOK_LINK,
-  PERSONAL_GITHUB_LINK,
-  PERSONAL_INSTAGRAM_LINK,
-  PERSONAL_LINKEDIN_LINK,
-  PERSONAL_WHATSAPP_LINK,
-} from '../modules/personal/personal.const';
+  FACEBOOK_LINK,
+  GITHUB_LINK,
+  INSTAGRAM_LINK,
+  LINKEDIN_LINK,
+  WHATSAPP_LINK,
+} from '../data/personal/social-media.data';
 
 export function SocialIcons() {
   const socialIconStyle = `
     w-6 h-6 
-    text-offwhite fill-current 
+    text-white fill-current 
     object-contain cursor-pointer 
     transition-all group-hover:scale-110 
     group-hover:text-primary group-focus:text-primary
@@ -27,7 +27,7 @@ export function SocialIcons() {
   return (
     <>
       <a
-        href={PERSONAL_GITHUB_LINK}
+        href={GITHUB_LINK}
         target="blank"
         aria-label="Github link"
         className={linkStyle}
@@ -35,7 +35,7 @@ export function SocialIcons() {
         <GithubIcon className={socialIconStyle} />
       </a>
       <a
-        href={PERSONAL_WHATSAPP_LINK}
+        href={WHATSAPP_LINK}
         target="blank"
         aria-label="Whatsapp link"
         className={linkStyle}
@@ -43,7 +43,7 @@ export function SocialIcons() {
         <WhatsappIcon className={socialIconStyle} />
       </a>
       <a
-        href={PERSONAL_LINKEDIN_LINK}
+        href={LINKEDIN_LINK}
         target="blank"
         aria-label="LinkedIn link"
         className={linkStyle}
@@ -51,7 +51,7 @@ export function SocialIcons() {
         <LinkedInIcon className={socialIconStyle} />
       </a>
       <a
-        href={PERSONAL_FACEBOOK_LINK}
+        href={FACEBOOK_LINK}
         target="blank"
         aria-label="Facebook link"
         className={linkStyle}
@@ -59,7 +59,7 @@ export function SocialIcons() {
         <FacebookIcon className={socialIconStyle} />
       </a>
       <a
-        href={PERSONAL_INSTAGRAM_LINK}
+        href={INSTAGRAM_LINK}
         target="blank"
         aria-label="Instagram link"
         className={linkStyle}

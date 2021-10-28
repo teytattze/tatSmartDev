@@ -3,16 +3,13 @@ import cx from 'clsx';
 import { NextSeo } from 'next-seo';
 import { Page } from '../components/page';
 import { Section } from '../components/section';
-import {
-  IPortfolioProject,
-  portfolioProjects,
-} from '../modules/personal/personal-portfolio.data';
 import { FlipCard } from '../components/flip-card';
 import { Button } from '../components/button';
 import { Dialog, Transition } from '@headlessui/react';
 import { IconButton } from '../components/icon-button';
 import { XIcon } from '@heroicons/react/solid';
 import { Divider } from '../components/divider';
+import { IProject, projects } from '../data/projects.data';
 
 function PortfolioPage() {
   return (
@@ -23,12 +20,12 @@ function PortfolioPage() {
       />
       <Page title="Portfolio" subtitle="Showcasing some of my best work">
         <Section>
-          {portfolioProjects.length ? (
+          {projects.length ? (
             <div
               className={cx('grid justify-center gap-8 projectsContainer')}
               // css={projectsContainer}
             >
-              {portfolioProjects.map((project) => (
+              {projects.map((project) => (
                 <PortfolioProjectItem
                   key={project.title}
                   title={project.title}
@@ -50,7 +47,7 @@ function PortfolioPage() {
   );
 }
 
-type PortfolioProjectItemProps = IPortfolioProject;
+type PortfolioProjectItemProps = IProject;
 
 export function PortfolioProjectItem({
   title,
@@ -97,7 +94,7 @@ export function PortfolioProjectItem({
   );
 }
 
-type PortfolioProjectModalProps = IPortfolioProject & {
+type PortfolioProjectModalProps = IProject & {
   open: boolean;
   handleModal: () => void;
 };

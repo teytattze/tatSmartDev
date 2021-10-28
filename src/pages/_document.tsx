@@ -21,7 +21,7 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
         </Head>
-        <body className="focus:outline-none text-offwhite bg-darkergrey">
+        <body>
           <Main />
           <NextScript />
         </body>
