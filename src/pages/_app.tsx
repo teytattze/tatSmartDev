@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           },
         ]}
       />
-      <ThemeProvider>
+      <ThemeProvider defaultTheme="dark">
         <Layout route={router.route}>
           <Component {...pageProps} />
         </Layout>
