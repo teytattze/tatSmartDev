@@ -1,31 +1,24 @@
-import * as React from 'react';
 import { NextSeo } from 'next-seo';
 import Typewriter from 'typewriter-effect';
 import { Container } from '../components/container';
 import { Divider } from '../components/divider';
+import { NonScrollableLayout } from '../layouts/non-scrollable.layout';
 import { SocialIcons } from '../components/social-icons';
 import { roles } from '../data/personal/job-roles.data';
 
 function HomePage() {
-  const [height, setHeight] = React.useState<number>();
-
-  React.useEffect(() => {
-    const screenHeight = window.innerHeight;
-    setHeight(screenHeight);
-  }, []);
-
   return (
     <>
       <NextSeo
         title="tatSmartDev - Home"
         description="A home page for my personal website. It includes navigation and social media links."
       />
-      <section style={{ height: `${height}px` }}>
+      <NonScrollableLayout>
         <Container>
           <div className="relative h-full">
             <div className="h-full flex flex-col justify-center space-y-8 text-center">
               <h1 className="text-5xl text-white font-semibold tracking-wide uppercase md:text-7xl">
-                Tat Tze Tey
+                Liam Tey
               </h1>
               <div className="flex justify-center space-x-2 text-xl text-center sm:space-x-3 md:space-x-4 md:text-3xl">
                 <h2 className="text-white">I am a</h2>
@@ -52,7 +45,7 @@ function HomePage() {
             </footer>
           </div>
         </Container>
-      </section>
+      </NonScrollableLayout>
     </>
   );
 }

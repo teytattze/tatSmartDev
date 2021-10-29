@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Navbar } from './navbar';
+import { Navbar } from '../components/navbar';
 
-export type LayoutProps = {
+export type DefaultLayoutProps = {
   children: React.ReactNode;
   route: string;
 };
@@ -13,7 +13,7 @@ const variants = {
   exit: { opacity: 0, y: 100 },
 };
 
-export function Layout({ children, route }: LayoutProps) {
+export function DefaultLayout({ children, route }: DefaultLayoutProps) {
   return (
     <>
       <Navbar />

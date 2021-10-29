@@ -2,7 +2,7 @@ import '../styles/globals.css';
 import * as React from 'react';
 import { NextSeo } from 'next-seo';
 import type { AppProps } from 'next/app';
-import { Layout } from '../components/layout';
+import { DefaultLayout } from '../layouts/default.layout';
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
@@ -23,9 +23,9 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           },
         ]}
       />
-      <Layout route={router.route}>
+      <DefaultLayout route={router.route}>
         <Component {...pageProps} />
-      </Layout>
+      </DefaultLayout>
     </>
   );
 }
