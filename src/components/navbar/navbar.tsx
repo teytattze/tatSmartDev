@@ -32,19 +32,21 @@ export function Navbar() {
         classes,
       )}
     >
-      <Container className="h-20 w-full flex justify-between items-center">
-        <h1 className="text-xl font-semibold font-heading">tatSmartDev</h1>
-        <div className="hidden md:flex items-center space-x-8">
-          {routes.map((route) => (
-            <NavbarLink
-              key={route.title}
-              title={route.title}
-              href={route.href}
-            />
-          ))}
-        </div>
-        <div className="block md:hidden">
-          <NavbarMenu />
+      <Container>
+        <div className="h-20 w-full flex justify-between items-center">
+          <h1 className="text-xl font-semibold font-heading">tatSmartDev</h1>
+          <div className="hidden md:flex items-center space-x-8">
+            {routes.map((route) => (
+              <NavbarLink
+                key={route.title}
+                title={route.title}
+                href={route.href}
+              />
+            ))}
+          </div>
+          <div className="block md:hidden">
+            <NavbarMenu />
+          </div>
         </div>
       </Container>
     </nav>

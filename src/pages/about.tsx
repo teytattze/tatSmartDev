@@ -58,11 +58,11 @@ function AboutPage() {
                   variant="contained"
                   aria-label="Download CV"
                   render={(renderProps) => (
-                    <a href={`${BASE_URL}/CV.pdf`} download {...renderProps} />
+                    <a href={`${BASE_URL}/CV.pdf`} download {...renderProps}>
+                      Download CV
+                    </a>
                   )}
-                >
-                  Download CV
-                </Button>
+                />
                 <div className="flex items-center space-x-4">
                   <Divider className="w-8 md:w-16 h-0.5" color="secondary" />
                   <div className="flex space-x-4">

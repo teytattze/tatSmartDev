@@ -15,7 +15,7 @@ const variants = {
 
 export function Layout({ children, route }: LayoutProps) {
   return (
-    <div className="relative w-full overflow-y-auto min-h-screen">
+    <>
       <Navbar />
       <AnimatePresence
         exitBeforeEnter
@@ -33,6 +33,6 @@ export function Layout({ children, route }: LayoutProps) {
           {children}
         </motion.main>
       </AnimatePresence>
-    </div>
+    </>
   );
 }

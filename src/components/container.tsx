@@ -2,24 +2,18 @@ import cx from 'clsx';
 
 export type ContainerProps = {
   children: React.ReactNode;
-  className?: string;
   size?: 'xl' | 'lg' | 'md';
 };
 
-export function Container({
-  children,
-  className,
-  size = 'xl',
-}: ContainerProps) {
-  const classes = cx('w-full', className);
+export function Container({ children, size = 'xl' }: ContainerProps) {
   return (
-    <div className={cx('h-full mx-auto px-4 sm:px-8', sizeByClasses[size])}>
-      <div className={classes}>{children}</div>
+    <div className={cx('h-full mx-auto px-4 xs:px-6 sm:px-8', sizes[size])}>
+      {children}
     </div>
   );
 }
 
-const sizeByClasses = {
+const sizes: Record<NonNullable<ContainerProps['size']>, string> = {
   xl: 'max-w-screen-xl',
   lg: 'max-w-screen-lg',
   md: 'max-w-screen-md',

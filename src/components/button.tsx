@@ -1,20 +1,14 @@
 import * as React from 'react';
 import cx from 'clsx';
 
-export type RenderButtonProps = {
-  className: string;
-  children: React.ReactNode;
-};
-
 export type ButtonProps = React.ComponentPropsWithoutRef<'button'> & {
   children?: React.ReactNode;
   endIcon?: React.ReactNode;
   loading?: boolean;
   loadingText?: string;
   variant?: 'contained' | 'outlined' | 'ghost';
-  render?: (
-    renderProps: RenderButtonProps,
-  ) => React.ReactElement<any, any> | null;
+  size?: 'sm' | 'md' | 'lg';
+  render?: (renderProps: any) => React.ReactElement<any, any>;
 };
 
 export function Button({
@@ -24,6 +18,7 @@ export function Button({
   loading = false,
   loadingText = 'Loading...',
   variant = 'contained',
+  size = 'md',
   render,
   ...props
 }: ButtonProps) {
@@ -35,21 +30,22 @@ export function Button({
     });
   }
 
-  const btnClasses = cx(
-    'inline-block select-none py-2 px-4 text-sm font-medium tracking-wide uppercase rounded transition-all ring-primary/30 focus:outline-none focus:ring active:ring-4',
+  const classes = cx(
+    'select-none text-sm font-medium tracking-wide uppercase rounded transition-all',
     { 'pointer-events-none opacity-50': loading },
     variants[variant],
+    sizes[size],
     className,
   );
 
   const content = (
     <>
       {loading ? (
-        <p>{loadingText}</p>
+        <span>{loadingText}</span>
       ) : (
-        <div className="flex items-center">
-          <p>{children}</p>
-          {endIconNode}
+        <div className="flex items-center justify-center">
+          <span>{children}</span>
+          <span>{endIconNode}</span>
         </div>
       )}
     </>
@@ -57,22 +53,27 @@ export function Button({
 
   if (render) {
     return render({
-      className: btnClasses,
-      children: content,
+      className: classes,
       ...props,
     });
   }
 
   return (
-    <button className={btnClasses} {...props}>
+    <button className={classes} disabled={loading} {...props}>
       {content}
     </button>
   );
 }
 
-const variants = {
-  contained: 'text-white bg-primary hover:bg-primary/90',
+const variants: Record<NonNullable<ButtonProps['variant']>, string> = {
+  contained: 'text-white bg-primary hover:bg-primary/80 focus:bg-primary/80',
   outlined:
-    'text-primary border border-primary hover:bg-primary hover:text-white',
+    'text-primary border-1 border-primary hover:text-white hover:bg-primary/80 focus:text-white focus:bg-primary/80',
   ghost: 'text-primary hover:bg-primary/20 focus:bg-primary/20',
+};
+
+const sizes: Record<NonNullable<ButtonProps['size']>, string> = {
+  sm: 'py-1.5 px-3',
+  md: 'py-2 px-4',
+  lg: 'py-3 px-5',
 };

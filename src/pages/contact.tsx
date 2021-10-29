@@ -51,86 +51,88 @@ function ContactPage() {
       />
       <Page title="Get in Touch" subtitle="Feel free to contact me anytimes">
         <Section>
-          <Container size="md" className="space-y-4">
-            <form
-              className="space-y-8"
-              onSubmit={handleSubmit(handleSend)}
-              autoComplete="off"
-            >
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <TextField
-                  id="name"
-                  label="Name"
-                  placeholder="Name"
-                  error={errors.name?.message}
-                  submitting={loading}
-                  autoComplete="none"
-                  {...register('name', formValidation.name)}
-                />
-                <TextField
-                  id="email"
-                  type="email"
-                  label="Email"
-                  placeholder="Email"
-                  error={errors.email?.message}
-                  submitting={loading}
-                  autoComplete="none"
-                  {...register('email', formValidation.email)}
-                />
-                <div className="sm:col-span-2">
+          <Container size="md">
+            <div className="space-y-4">
+              <form
+                className="space-y-8"
+                onSubmit={handleSubmit(handleSend)}
+                autoComplete="off"
+              >
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <TextField
-                    id="subject"
-                    label="Subject"
-                    placeholder="Subject"
-                    error={errors.subject?.message}
+                    id="name"
+                    label="Name"
+                    placeholder="Name"
+                    error={errors.name?.message}
                     submitting={loading}
                     autoComplete="none"
-                    {...register('subject', formValidation.subject)}
+                    {...register('name', formValidation.name)}
                   />
-                </div>
-                <div className="sm:col-span-2">
                   <TextField
-                    label="Message"
-                    error={errors.message?.message}
+                    id="email"
+                    type="email"
+                    label="Email"
+                    placeholder="Email"
+                    error={errors.email?.message}
                     submitting={loading}
-                    render={(renderProps) => (
-                      <textarea
-                        id="message"
-                        placeholder="Message"
-                        rows={6}
-                        className={renderProps.className}
-                        autoComplete="none"
-                        {...register('message', formValidation.message)}
-                      />
-                    )}
+                    autoComplete="none"
+                    {...register('email', formValidation.email)}
                   />
+                  <div className="sm:col-span-2">
+                    <TextField
+                      id="subject"
+                      label="Subject"
+                      placeholder="Subject"
+                      error={errors.subject?.message}
+                      submitting={loading}
+                      autoComplete="none"
+                      {...register('subject', formValidation.subject)}
+                    />
+                  </div>
+                  <div className="sm:col-span-2">
+                    <TextField
+                      label="Message"
+                      error={errors.message?.message}
+                      submitting={loading}
+                      render={(renderProps) => (
+                        <textarea
+                          id="message"
+                          placeholder="Message"
+                          rows={6}
+                          className={renderProps.className}
+                          autoComplete="none"
+                          {...register('message', formValidation.message)}
+                        />
+                      )}
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="w-full text-center">
-                <Button
-                  type="submit"
-                  loading={loading}
-                  loadingText="Submitting..."
-                  aria-label="Submit"
-                  endIcon={<PaperAirplaneIcon className="rotate-90" />}
+                <div className="w-full text-center">
+                  <Button
+                    type="submit"
+                    loading={loading}
+                    loadingText="Submitting..."
+                    aria-label="Submit"
+                    endIcon={<PaperAirplaneIcon className="rotate-90" />}
+                  >
+                    Submit
+                  </Button>
+                </div>
+              </form>
+              {status && (
+                <p
+                  className={cx(
+                    'text-xs font-medium',
+                    {
+                      'text-success': status === ResponseStatus.SUCCESS,
+                    },
+                    { 'text-error': status === ResponseStatus.FAIL },
+                  )}
                 >
-                  Submit
-                </Button>
-              </div>
-            </form>
-            {status && (
-              <p
-                className={cx(
-                  'text-xs font-medium',
-                  {
-                    'text-success': status === ResponseStatus.SUCCESS,
-                  },
-                  { 'text-error': status === ResponseStatus.FAIL },
-                )}
-              >
-                {message}
-              </p>
-            )}
+                  {message}
+                </p>
+              )}
+            </div>
           </Container>
         </Section>
       </Page>

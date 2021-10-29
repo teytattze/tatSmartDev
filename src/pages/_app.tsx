@@ -2,7 +2,6 @@ import '../styles/globals.css';
 import * as React from 'react';
 import { NextSeo } from 'next-seo';
 import type { AppProps } from 'next/app';
-import { ThemeProvider } from 'next-themes';
 import { Layout } from '../components/layout';
 
 function MyApp({ Component, pageProps, router }: AppProps) {
@@ -24,11 +23,9 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           },
         ]}
       />
-      <ThemeProvider defaultTheme="dark">
-        <Layout route={router.route}>
-          <Component {...pageProps} />
-        </Layout>
-      </ThemeProvider>
+      <Layout route={router.route}>
+        <Component {...pageProps} />
+      </Layout>
     </>
   );
 }
