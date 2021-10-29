@@ -21,12 +21,9 @@ module.exports = {
       colors: {
         white: colors.gray[50],
         black: colors.gray[900],
-        darkgrey: '#262626',
-        mediumgrey: '#525252',
-        lightgrey: '#737373',
-        lightergrey: '#A3A3A3',
-        actionwhite: '#F5F5F5',
-        actionblack: '#262626',
+        darkgray: colors.gray[800],
+        mediumgray: colors.gray[700],
+        lightgray: colors.gray[400],
         primary: {
           light: colors.amber[400],
           DEFAULT: colors.amber[500],

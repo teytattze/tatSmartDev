@@ -37,7 +37,7 @@
     @apply text-sm font-medium tracking-wide uppercase transition-colors cursor-pointer hover:text-primary focus:text-primary;
   }
   .typography-secondary {
-    @apply text-lightergrey;
+    @apply text-lightgray;
   }
   .leading-title {
     @apply leading-normal;

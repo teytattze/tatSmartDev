@@ -1,8 +1,7 @@
 import * as React from 'react';
 import cx from 'clsx';
 import { NextSeo } from 'next-seo';
-import { Page } from '../components/page';
-import { Section } from '../components/section';
+import { PageLayout } from '../layouts/page.layout';
 import { FlipCard } from '../components/flip-card';
 import { Button } from '../components/button';
 import { Dialog, Transition } from '@headlessui/react';
@@ -10,6 +9,7 @@ import { IconButton } from '../components/icon-button';
 import { XIcon } from '@heroicons/react/solid';
 import { Divider } from '../components/divider';
 import { IProject, projects } from '../data/projects.data';
+import { Container } from '../components/container';
 
 function PortfolioPage() {
   return (
@@ -18,8 +18,8 @@ function PortfolioPage() {
         title="tatSmartDev - Portfolio"
         description="A page which showcases all of my personal projects."
       />
-      <Page title="Portfolio" subtitle="Showcasing some of my best work">
-        <Section>
+      <PageLayout title="Portfolio" subtitle="Showcasing some of my best work">
+        <Container>
           {projects.length ? (
             <div
               className={cx('grid justify-center gap-8 projectsContainer')}
@@ -41,8 +41,8 @@ function PortfolioPage() {
               Sorry, there is no project available...
             </h2>
           )}
-        </Section>
-      </Page>
+        </Container>
+      </PageLayout>
     </>
   );
 }
@@ -65,7 +65,7 @@ export function PortfolioProjectItem({
     <>
       <FlipCard
         aria-label={title}
-        className="relative flex justify-center justify-self-center items-center w-64 h-64 cursor-pointer overflow-hidden md:w-72 md:h-72 lg:w-80 lg:h-80 bg-darkgrey rounded transition-all ease-in-out duration-300 border-b-2 border-transparent hover:border-primary outline-none focus:border-primary"
+        className="relative flex justify-center justify-self-center items-center w-64 h-64 cursor-pointer overflow-hidden md:w-72 md:h-72 lg:w-80 lg:h-80 bg-darkgray rounded transition-all ease-in-out duration-300 border-b-2 border-transparent hover:border-primary outline-none focus:border-primary"
         frontContent={
           <FlipCard.Front className="w-full h-full flex items-center justify-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -73,7 +73,7 @@ export function PortfolioProjectItem({
           </FlipCard.Front>
         }
         backContent={
-          <FlipCard.Back className="w-full h-full bg-darkgrey flex flex-col justify-center items-center space-y-4">
+          <FlipCard.Back className="w-full h-full bg-darkgray flex flex-col justify-center items-center space-y-4">
             <h1 className="typography-h5">{title}</h1>
             <Button onClick={handleModal} variant="ghost">
               More Info
@@ -130,7 +130,7 @@ export function PortfolioProjectModal({
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Dialog.Overlay className="fixed inset-0 transition-opacity bg-darkgrey/50 backdrop-blur-xl" />
+            <Dialog.Overlay className="fixed inset-0 transition-opacity bg-darkgray/50 backdrop-blur-xl" />
           </Transition.Child>
 
           <Transition.Child
@@ -142,7 +142,7 @@ export function PortfolioProjectModal({
             leaveFrom="opacity-100 translate-y-0"
             leaveTo="opacity-0 -translate-y-12"
           >
-            <div className="overflow-hidden w-full max-w-screen-sm shadow-xl transform bg-darkgrey rounded">
+            <div className="overflow-hidden w-full max-w-screen-sm shadow-xl transform bg-darkgray rounded">
               <div className="flex justify-between items-center p-4">
                 <Dialog.Title as="h1" className="typography-h5">
                   {title}

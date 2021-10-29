@@ -13,7 +13,7 @@ export function Navbar() {
   const handleScroll = () => {
     if (window.pageYOffset > 50) {
       setClasses(
-        'bg-black/60 backdrop-blur-xl shadow-xl border-b-2 border-darkgrey/50',
+        'bg-black/60 backdrop-blur-xl shadow-xl border-b-2 border-darkgray/50',
       );
       return;
     }

@@ -13,5 +13,5 @@ type Colors = Record<NonNullable<DividerProps['color']>, string>;
 
 const colors: Colors = {
   primary: 'bg-primary',
-  secondary: 'bg-mediumgrey',
+  secondary: 'bg-mediumgray',
 };
