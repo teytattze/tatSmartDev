@@ -1,4 +1,4 @@
-import { BASE_URL } from './config.const';
+export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL as string;
 
 export interface IRoute {
   title: string;
@@ -23,3 +23,13 @@ export const routes: IRoute[] = [
     href: `${BASE_URL}/contact`,
   },
 ];
+
+export const checkActiveRoute = (current: string, href: string) => {
+  const currentBase = current.split('/')[1];
+  const linkHref = href.replace(BASE_URL, '').split('/')[1];
+
+  if (currentBase === linkHref) {
+    return true;
+  }
+  return false;
+};

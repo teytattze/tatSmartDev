@@ -1,8 +1,8 @@
-import WhatsappIcon from '/public/social-icons/whatsapp.svg';
-import FacebookIcon from '/public/social-icons/facebook.svg';
-import LinkedInIcon from '/public/social-icons/linkedin.svg';
-import InstagramIcon from '/public/social-icons/instagram.svg';
-import GithubIcon from '/public/social-icons/github.svg';
+import WhatsappIcon from '/public/images/socials/whatsapp.svg';
+import FacebookIcon from '/public/images/socials/facebook.svg';
+import LinkedInIcon from '/public/images/socials/linkedin.svg';
+import InstagramIcon from '/public/images/socials/instagram.svg';
+import GithubIcon from '/public/images/socials/github.svg';
 import {
   FACEBOOK_LINK,
   GITHUB_LINK,

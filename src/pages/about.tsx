@@ -3,12 +3,11 @@ import Image from 'next/image';
 import { Button } from '../components/button';
 import { Divider } from '../components/divider';
 import { PageLayout } from '../layouts/page.layout';
-import { Section } from '../layouts/section.layout';
+import { SectionLayout } from '../layouts/section.layout';
 import { SocialIcons } from '../components/social-icons';
 import { details } from '../data/personal/details.data';
 import { introduction } from '../data/personal/introduction.data';
 import { skills } from '../data/skills.data';
-import { BASE_URL } from '../shared/consts/config.const';
 import { Container } from '../components/container';
 
 function AboutPage() {
@@ -20,7 +19,7 @@ function AboutPage() {
       />
       <PageLayout title="About Me" subtitle="Get to know me">
         <Container>
-          <Section>
+          <SectionLayout>
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
               <div className="relative rounded-full h-64 w-64 sm:h-80 sm:w-80 overflow-hidden justify-self-center md:w-full md:h-full md:rounded md:col-span-5 xl:col-span-4">
                 <Image
@@ -60,7 +59,7 @@ function AboutPage() {
                     variant="contained"
                     aria-label="Download CV"
                     render={(renderProps) => (
-                      <a href={`${BASE_URL}/CV.pdf`} download {...renderProps}>
+                      <a href="/CV.pdf" download {...renderProps}>
                         Download CV
                       </a>
                     )}
@@ -74,8 +73,8 @@ function AboutPage() {
                 </div>
               </div>
             </div>
-          </Section>
-          <Section title="My Skills" subtitle="Technologies that I used">
+          </SectionLayout>
+          <SectionLayout title="My Skills" subtitle="Technologies that I used">
             <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xs:gap-4 sm:gap-8">
               {skills.map((skill, index) => (
                 <div
@@ -97,7 +96,7 @@ function AboutPage() {
                 </div>
               ))}
             </div>
-          </Section>
+          </SectionLayout>
         </Container>
       </PageLayout>
     </>

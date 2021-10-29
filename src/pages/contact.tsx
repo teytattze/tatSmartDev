@@ -4,7 +4,6 @@ import { NextSeo } from 'next-seo';
 import cx from 'clsx';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { PageLayout } from '../layouts/page.layout';
-import { Section } from '../layouts/section.layout';
 import {
   formValidation,
   IContactFormValue,
