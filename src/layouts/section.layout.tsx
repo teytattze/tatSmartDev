@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { SectionTitle as Title } from '../components/section-title';
 import { NextComponentType } from 'next';
 

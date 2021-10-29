@@ -1,5 +1,4 @@
 import { NextComponentType } from 'next';
-import * as React from 'react';
 import { PageTitle as Title } from '../components/page-title';
 
 export type PageLayoutProps = {

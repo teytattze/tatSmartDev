@@ -88,7 +88,7 @@ const NavbarMenu: NextComponentType = () => {
             leaveFrom="transform scale-100 opacity-100 translate-y-0"
             leaveTo="transform scale-95 opacity-0 -translate-y-4"
           >
-            <Menu.Items className="absolute top-10 right-0 py-2 w-32 backdrop-blur-xl border-[1px] border-darkgray/60 bg-darkgray shadow-xl rounded">
+            <Menu.Items className="absolute top-10 right-0 py-2 w-32 backdrop-blur-xl border-[1px] border-mediumgray/60 bg-darkgray shadow-xl rounded">
               {routes.map((route) => (
                 <Menu.Item as="div" key={route.title}>
                   <NavbarMenuLink href={route.href} title={route.title} />
@@ -149,7 +149,7 @@ const NavbarMenuLink: NextComponentType<{}, {}, NavbarLinkProps> = ({
     <NextLink href={href} passHref>
       <a
         className={cx(
-          'inline-block w-full py-2 px-4 typography-button hover:bg-black focus:bg-black/40 active:bg-black/60 active:text-primary',
+          'inline-block w-full py-2 px-4 typography-button hover:bg-black/60 focus:bg-black/60 active:text-primary',
           { 'text-primary': active },
         )}
         aria-label={title}

@@ -1,5 +1,4 @@
 import '../styles/globals.css';
-import * as React from 'react';
 import { NextSeo } from 'next-seo';
 import type { AppProps } from 'next/app';
 import { DefaultLayout } from '../layouts/default.layout';

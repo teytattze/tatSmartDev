@@ -1,15 +1,16 @@
-import * as React from 'react';
+import { Dialog, Transition } from '@headlessui/react';
+import { XIcon } from '@heroicons/react/solid';
+import { useRef, useState, Fragment } from 'react';
 import cx from 'clsx';
 import { NextSeo } from 'next-seo';
 import { PageLayout } from '../layouts/page.layout';
 import { FlipCard } from '../components/flip-card';
 import { Button } from '../components/button';
-import { Dialog, Transition } from '@headlessui/react';
 import { IconButton } from '../components/icon-button';
-import { XIcon } from '@heroicons/react/solid';
 import { Divider } from '../components/divider';
 import { IProject, projects } from '../data/projects.data';
 import { Container } from '../components/container';
+import { SectionLayout } from '../layouts/section.layout';
 
 function PortfolioPage() {
   return (
@@ -20,27 +21,29 @@ function PortfolioPage() {
       />
       <PageLayout title="Portfolio" subtitle="Showcasing some of my best work">
         <Container>
-          {projects.length ? (
-            <div
-              className={cx('grid justify-center gap-8 projectsContainer')}
-              // css={projectsContainer}
-            >
-              {projects.map((project) => (
-                <PortfolioProjectItem
-                  key={project.title}
-                  title={project.title}
-                  imgUrl={project.imgUrl}
-                  link={project.link}
-                  repo={project.repo}
-                  technologies={project.technologies}
-                />
-              ))}
-            </div>
-          ) : (
-            <h2 className="typography-h6 typography-secondary">
-              Sorry, there is no project available...
-            </h2>
-          )}
+          <SectionLayout>
+            {projects.length ? (
+              <div
+                className={cx('grid justify-center gap-8 projectsContainer')}
+                // css={projectsContainer}
+              >
+                {projects.map((project) => (
+                  <PortfolioProjectItem
+                    key={project.title}
+                    title={project.title}
+                    imgUrl={project.imgUrl}
+                    link={project.link}
+                    repo={project.repo}
+                    technologies={project.technologies}
+                  />
+                ))}
+              </div>
+            ) : (
+              <h2 className="typography-h6 typography-secondary">
+                Sorry, there is no project available...
+              </h2>
+            )}
+          </SectionLayout>
         </Container>
       </PageLayout>
     </>
@@ -56,7 +59,7 @@ export function PortfolioProjectItem({
   link,
   repo,
 }: PortfolioProjectItemProps) {
-  const [open, setOpen] = React.useState<boolean>(false);
+  const [open, setOpen] = useState<boolean>(false);
   const handleModal = () => {
     setOpen((prev) => !prev);
   };
@@ -108,10 +111,10 @@ export function PortfolioProjectModal({
   open,
   handleModal,
 }: PortfolioProjectModalProps) {
-  const cancelButtonRef = React.useRef(null);
+  const cancelButtonRef = useRef(null);
 
   return (
-    <Transition as={React.Fragment} show={open}>
+    <Transition as={Fragment} show={open}>
       <Dialog
         as="div"
         static
@@ -122,7 +125,7 @@ export function PortfolioProjectModal({
       >
         <div className="flex justify-center items-center w-full h-full px-8">
           <Transition.Child
-            as={React.Fragment}
+            as={Fragment}
             enter="duration-200 ease-in-out"
             enterFrom="opacity-0"
             enterTo="opacity-100"
@@ -134,7 +137,7 @@ export function PortfolioProjectModal({
           </Transition.Child>
 
           <Transition.Child
-            as={React.Fragment}
+            as={Fragment}
             enter="duration-300 ease-in-out"
             enterFrom="opacity-0 -translate-y-12"
             enterTo="opacity-100 translate-y-0"
