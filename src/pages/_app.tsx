@@ -7,8 +7,9 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <>
       <NextSeo
+        title="tatSmartDev"
         defaultTitle="tatSmartDev"
-        description="This is my personal website which includes some of my information."
+        description="This is my personal website which includes my information."
         canonical="https://www.tatsmartdev.com"
         additionalMetaTags={[
           {
