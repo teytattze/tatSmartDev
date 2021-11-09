@@ -1,3 +1,4 @@
+import { NextPage } from 'next';
 import { NextSeo } from 'next-seo';
 import Typewriter from 'typewriter-effect';
 import { Container } from '../components/container';
@@ -6,7 +7,7 @@ import { NonScrollableLayout } from '../layouts/non-scrollable.layout';
 import { SocialIcons } from '../components/social-icons';
 import { roles } from '../data/personal/job-roles.data';
 
-function HomePage() {
+const HomePage: NextPage = () => {
   return (
     <>
       <NextSeo
@@ -48,6 +49,6 @@ function HomePage() {
       </NonScrollableLayout>
     </>
   );
-}
+};
 
 export default HomePage;

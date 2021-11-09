@@ -1,3 +1,4 @@
+import { NextPage } from 'next';
 import { NextSeo } from 'next-seo';
 import Image from 'next/image';
 import { Button } from '../components/button';
@@ -10,7 +11,7 @@ import { introduction } from '../data/personal/introduction.data';
 import { skills } from '../data/skills.data';
 import { Container } from '../components/container';
 
-function AboutPage() {
+const AboutPage: NextPage = () => {
   return (
     <>
       <NextSeo
@@ -59,8 +60,8 @@ function AboutPage() {
                     variant="contained"
                     aria-label="Download CV"
                     render={(renderProps) => (
-                      <a href="/CV.pdf" download {...renderProps}>
-                        Download CV
+                      <a href="/Resume.pdf" download {...renderProps}>
+                        Download Resume
                       </a>
                     )}
                   />
@@ -101,6 +102,6 @@ function AboutPage() {
       </PageLayout>
     </>
   );
-}
+};
 
 export default AboutPage;

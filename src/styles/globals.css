@@ -48,6 +48,9 @@
   .leading-desc {
     @apply leading-relaxed;
   }
+  .square {
+    aspect-ratio: 1 / 1;
+  }
 }
 
 * {

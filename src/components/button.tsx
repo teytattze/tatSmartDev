@@ -54,6 +54,7 @@ export function Button({
   if (render) {
     return render({
       className: classes,
+      children: content,
       ...props,
     });
   }

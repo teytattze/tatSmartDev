@@ -1,9 +1,10 @@
+import { NextPage } from 'next';
 import { NextSeo } from 'next-seo';
 import { Container } from '../components/container';
 import { Divider } from '../components/divider';
 import { NonScrollableLayout } from '../layouts/non-scrollable.layout';
 
-function ErrorPage() {
+const ErrorPage: NextPage = () => {
   return (
     <>
       <NextSeo
@@ -21,6 +22,6 @@ function ErrorPage() {
       </NonScrollableLayout>
     </>
   );
-}
+};
 
 export default ErrorPage;

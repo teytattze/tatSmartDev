@@ -1,5 +1,6 @@
 import { PaperAirplaneIcon } from '@heroicons/react/solid';
 import { useState } from 'react';
+import { NextPage } from 'next';
 import { NextSeo } from 'next-seo';
 import cx from 'clsx';
 import { SubmitHandler, useForm } from 'react-hook-form';
@@ -15,7 +16,7 @@ import { Button } from '../components/button';
 import { TextField } from '../components/form/textfield';
 import { Container } from '../components/container';
 
-function ContactPage() {
+const ContactPage: NextPage = () => {
   const {
     register,
     handleSubmit,
@@ -141,6 +142,6 @@ function ContactPage() {
       </PageLayout>
     </>
   );
-}
+};
 
 export default ContactPage;

@@ -1,64 +1,38 @@
-import * as React from 'react';
-import { motion } from 'framer-motion';
+import { NextComponentType } from 'next';
 
-export type FlipCardProps = {
-  frontContent: React.ReactNode;
-  backContent: React.ReactNode;
-  className: string;
-};
-
-export type FlipCardChildProps = {
-  children: React.ReactNode;
-  className: string;
-};
-
-export function FlipCardImpl({
-  frontContent,
-  backContent,
-  className,
-}: FlipCardProps) {
-  const [front, setFront] = React.useState<boolean>(true);
-
+const FlipCardImpl: NextComponentType = ({ children }) => {
   return (
-    <button
-      type="button"
-      onClick={() => setFront((prev) => !prev)}
-      className={className}
-    >
-      {front ? frontContent : backContent}
-    </button>
-  );
-}
-
-export function FlipCardFront({ children, className }: FlipCardChildProps) {
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ type: 'easeInOut', duration: 0.3 }}
-      className={className}
+    <div
+      className="block group w-full h-full relative"
+      tabIndex={0}
+      role="button"
+      aria-label="Flippable Card"
     >
       {children}
-    </motion.div>
+    </div>
   );
-}
+};
 
-export function FlipCardBack({ children, className }: FlipCardChildProps) {
+export const FlipCardFront: NextComponentType = ({ children }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ type: 'easeInOut', duration: 0.3 }}
-      className={className}
+    <div
+      className="z-20 absolute w-full h-full transition-opacity group-hover:opacity-0 group-focus:opacity-0 group-hover:z-0 group-focus:z-0"
+      aria-label="Card's front"
     >
       {children}
-    </motion.div>
+    </div>
   );
-}
+};
 
-const Front = FlipCardFront;
-const Back = FlipCardBack;
+export const FlipCardBack: NextComponentType = ({ children }) => {
+  return (
+    <div className="z-10 absolute w-full h-full" aria-label="Card's back">
+      {children}
+    </div>
+  );
+};
 
-export const FlipCard = Object.assign(FlipCardImpl, { Front, Back });
+export const FlipCard = Object.assign(FlipCardImpl, {
+  Front: FlipCardFront,
+  Back: FlipCardBack,
+});
