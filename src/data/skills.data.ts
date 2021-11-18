@@ -22,14 +22,6 @@ export const skills = [
     imageUrl: `${BASE_SKILL_LOGO_URL}/java-logo.svg`,
   },
   {
-    title: 'Python',
-    imageUrl: `${BASE_SKILL_LOGO_URL}/python-logo.svg`,
-  },
-  {
-    title: 'Dart',
-    imageUrl: `${BASE_SKILL_LOGO_URL}/dart-logo.svg`,
-  },
-  {
     title: 'ReactJS',
     imageUrl: `${BASE_SKILL_LOGO_URL}/reactjs-logo.svg`,
   },
@@ -54,6 +46,14 @@ export const skills = [
     imageUrl: `${BASE_SKILL_LOGO_URL}/flutter-logo.svg`,
   },
   {
+    title: 'Dart',
+    imageUrl: `${BASE_SKILL_LOGO_URL}/dart-logo.svg`,
+  },
+  {
+    title: 'Go',
+    imageUrl: `${BASE_SKILL_LOGO_URL}/golang-logo.svg`,
+  },
+  {
     title: 'Firebase',
     imageUrl: `${BASE_SKILL_LOGO_URL}/firebase-logo.svg`,
   },
@@ -62,7 +62,7 @@ export const skills = [
     imageUrl: `${BASE_SKILL_LOGO_URL}/docker-logo.svg`,
   },
   {
-    title: 'SQL/NoSQL',
-    imageUrl: `${BASE_SKILL_LOGO_URL}/sql-logo.svg`,
+    title: 'SQL / NoSQL',
+    imageUrl: `${BASE_SKILL_LOGO_URL}/database-logo.svg`,
   },
 ];
