@@ -1,11 +1,9 @@
 import { NextPage } from 'next';
 import { NextSeo } from 'next-seo';
-import Typewriter from 'typewriter-effect';
 import { Container } from '../components/container';
 import { Divider } from '../components/divider';
 import { NonScrollableLayout } from '../layouts/non-scrollable.layout';
 import { SocialIcons } from '../components/social-icons';
-import { roles } from '../data/personal/job-roles.data';
 
 const HomePage: NextPage = () => {
   return (
@@ -24,13 +22,7 @@ const HomePage: NextPage = () => {
               <div className="flex justify-center space-x-2 text-xl text-center sm:space-x-3 md:space-x-4 md:text-3xl">
                 <h2 className="text-white">I am a</h2>
                 <span className="text-primary">
-                  <Typewriter
-                    options={{
-                      strings: roles,
-                      autoStart: true,
-                      loop: true,
-                    }}
-                  />
+                  Software Engineer
                 </span>
               </div>
             </div>

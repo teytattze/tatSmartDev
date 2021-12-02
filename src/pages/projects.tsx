@@ -51,18 +51,21 @@ export const ProjectItem: NextComponentType<{}, {}, { project: IProject }> = ({
 
   return (
     <>
-      <div className="bg-darkgray square text-center">
+      <div className="square bg-darkgray text-center">
         <FlipCard>
           <FlipCard.Front>
-            <div className="w-full h-full flex items-center justify-center bg-darkgray">
-              <div className="w-full relative p-20 sm:p-24">
+            <div className="w-full h-full flex flex-col items-center justify-center bg-darkgray p-12 xs:p-20">
+              <div className="w-full relative">
                 <Image
                   layout="intrinsic"
                   src={project.imgUrl}
                   alt={project.title}
-                  width={160}
-                  height={160}
+                  width={200}
+                  height={200}
                 />
+              </div>
+              <div className="mt-4">
+              <p className="typography-p typography-secondary">{project.title}</p>
               </div>
             </div>
           </FlipCard.Front>
