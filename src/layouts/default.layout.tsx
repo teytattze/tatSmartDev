@@ -1,8 +1,9 @@
+import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Navbar } from '../components/navbar';
-import { NextComponentType } from 'next';
 
-export type DefaultLayoutProps = {
+type DefaultLayoutProps = {
+  children: React.ReactNode;
   route: string;
 };
 
@@ -12,10 +13,7 @@ const variants = {
   exit: { opacity: 0, y: 100 },
 };
 
-export const DefaultLayout: NextComponentType<{}, {}, DefaultLayoutProps> = ({
-  children,
-  route,
-}) => {
+export function DefaultLayout({ children, route }: DefaultLayoutProps) {
   return (
     <>
       <Navbar />
@@ -37,4 +35,4 @@ export const DefaultLayout: NextComponentType<{}, {}, DefaultLayoutProps> = ({
       </AnimatePresence>
     </>
   );
-};
+}

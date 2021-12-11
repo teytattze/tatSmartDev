@@ -1,7 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 import cx from 'clsx';
 
-export type ButtonProps = React.ComponentPropsWithoutRef<'button'> & {
+type ButtonProps = React.ComponentPropsWithoutRef<'button'> & {
   children?: React.ReactNode;
   endIcon?: React.ReactNode;
   loading?: boolean;

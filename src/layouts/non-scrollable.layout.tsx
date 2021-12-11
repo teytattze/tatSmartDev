@@ -1,10 +1,13 @@
-import { useState, useEffect } from 'react';
-import { NextComponentType } from 'next';
+import React from 'react';
 
-export const NonScrollableLayout: NextComponentType = ({ children }) => {
-  const [height, setHeight] = useState<number>(0);
+type NonScrollableLayoutProps = {
+  children: React.ReactNode;
+};
 
-  useEffect(() => {
+export function NonScrollableLayout({ children }: NonScrollableLayoutProps) {
+  const [height, setHeight] = React.useState<number>(0);
+
+  React.useEffect(() => {
     const screenHeight = window.innerHeight;
     setHeight(screenHeight);
   }, []);
@@ -12,4 +15,4 @@ export const NonScrollableLayout: NextComponentType = ({ children }) => {
   return (
     <>{height && <div style={{ height: `${height}px` }}>{children}</div>}</>
   );
-};
+}

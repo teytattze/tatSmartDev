@@ -1,16 +1,15 @@
 import { Menu, Transition } from '@headlessui/react';
 import { MenuAlt3Icon, XIcon } from '@heroicons/react/solid';
-import { useEffect, useState, Fragment } from 'react';
-import { NextComponentType } from 'next';
+import React from 'react';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import cx from 'clsx';
 import { Container } from './container';
 import { IconButton } from './icon-button';
-import { checkActiveRoute, routes } from '../lib/routes.lib';
+import { checkActiveRoute, routes } from '../lib/routes';
 
-export const Navbar: NextComponentType = () => {
-  const [classes, setClasses] = useState<string>(
+export function Navbar() {
+  const [classes, setClasses] = React.useState<string>(
     'bg-transparent border-transparent',
   );
 
@@ -24,7 +23,7 @@ export const Navbar: NextComponentType = () => {
     setClasses('bg-transparent border-transparent');
   };
 
-  useEffect(() => {
+  React.useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -55,9 +54,9 @@ export const Navbar: NextComponentType = () => {
       </Container>
     </nav>
   );
-};
+}
 
-const NavbarMenu: NextComponentType = () => {
+function NavbarMenu() {
   return (
     <Menu as="div" className="z-10">
       {({ open }) => (
@@ -80,7 +79,7 @@ const NavbarMenu: NextComponentType = () => {
             </IconButton>
           )}
           <Transition
-            as={Fragment}
+            as={React.Fragment}
             enter="transition duration-300 ease-in-out"
             enterFrom="transform scale-95 opacity-0 -translate-y-4"
             enterTo="transform scale-100 opacity-100 translate-y-0"
@@ -100,21 +99,18 @@ const NavbarMenu: NextComponentType = () => {
       )}
     </Menu>
   );
-};
+}
 
-export type NavbarLinkProps = {
+type NavbarLinkProps = {
   title: string;
   href: string;
 };
 
-export const NavbarLink: NextComponentType<{}, {}, NavbarLinkProps> = ({
-  title,
-  href,
-}) => {
+export function NavbarLink({ title, href }: NavbarLinkProps) {
   const { asPath } = useRouter();
-  const [active, setActive] = useState(false);
+  const [active, setActive] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     setActive(checkActiveRoute(asPath, href));
   }, [asPath, href]);
 
@@ -132,16 +128,13 @@ export const NavbarLink: NextComponentType<{}, {}, NavbarLinkProps> = ({
       </a>
     </NextLink>
   );
-};
+}
 
-const NavbarMenuLink: NextComponentType<{}, {}, NavbarLinkProps> = ({
-  href,
-  title,
-}) => {
+function NavbarMenuLink({ href, title }: NavbarLinkProps) {
   const { asPath } = useRouter();
-  const [active, setActive] = useState(false);
+  const [active, setActive] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     setActive(checkActiveRoute(asPath, href));
   }, [asPath, href]);
 
@@ -158,4 +151,4 @@ const NavbarMenuLink: NextComponentType<{}, {}, NavbarLinkProps> = ({
       </a>
     </NextLink>
   );
-};
+}

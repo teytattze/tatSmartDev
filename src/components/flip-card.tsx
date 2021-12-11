@@ -1,6 +1,10 @@
-import { NextComponentType } from 'next';
+import React from 'react';
 
-const FlipCardImpl: NextComponentType = ({ children }) => {
+type FlipCardProp = {
+  children: React.ReactNode;
+};
+
+function FlipCardImpl({ children }: FlipCardProp) {
   return (
     <div
       className="block group w-full h-full relative"
@@ -11,9 +15,13 @@ const FlipCardImpl: NextComponentType = ({ children }) => {
       {children}
     </div>
   );
+}
+
+type FlipCardFrontProp = {
+  children: React.ReactNode;
 };
 
-export const FlipCardFront: NextComponentType = ({ children }) => {
+export function FlipCardFront({ children }: FlipCardFrontProp) {
   return (
     <div
       className="z-20 absolute w-full h-full transition-opacity group-hover:opacity-0 group-focus:opacity-0 group-hover:z-0 group-focus:z-0"
@@ -22,15 +30,19 @@ export const FlipCardFront: NextComponentType = ({ children }) => {
       {children}
     </div>
   );
+}
+
+type FlipCardBackProp = {
+  children: React.ReactNode;
 };
 
-export const FlipCardBack: NextComponentType = ({ children }) => {
+export function FlipCardBack({ children }: FlipCardBackProp) {
   return (
     <div className="z-10 absolute w-full h-full" aria-label="Card's back">
       {children}
     </div>
   );
-};
+}
 
 export const FlipCard = Object.assign(FlipCardImpl, {
   Front: FlipCardFront,

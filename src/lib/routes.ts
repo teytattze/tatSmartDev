@@ -18,18 +18,11 @@ export const routes: IRoute[] = [
     title: 'Projects',
     href: `${BASE_URL}/projects`,
   },
-  {
-    title: 'Contact',
-    href: `${BASE_URL}/contact`,
-  },
 ];
 
 export const checkActiveRoute = (current: string, href: string) => {
   const currentBase = current.split('/')[1];
   const linkHref = href.replace(BASE_URL, '').split('/')[1];
 
-  if (currentBase === linkHref) {
-    return true;
-  }
-  return false;
+  return currentBase === linkHref;
 };

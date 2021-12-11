@@ -1,5 +1,6 @@
 import { NextPage } from 'next';
 import { NextSeo } from 'next-seo';
+import Typewriter from 'typewriter-effect';
 import { Container } from '../components/container';
 import { Divider } from '../components/divider';
 import { NonScrollableLayout } from '../layouts/non-scrollable.layout';
@@ -22,7 +23,17 @@ const HomePage: NextPage = () => {
               <div className="flex justify-center space-x-2 text-xl text-center sm:space-x-3 md:space-x-4 md:text-3xl">
                 <h2 className="text-white">I am a</h2>
                 <span className="text-primary">
-                  Software Engineer
+                  <Typewriter
+                    options={{
+                      strings: [
+                        'Software Engineer',
+                        'Full Stack Engineer',
+                        'Coding Mentor',
+                      ],
+                      loop: true,
+                      autoStart: true,
+                    }}
+                  />
                 </span>
               </div>
             </div>

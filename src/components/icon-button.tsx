@@ -1,12 +1,12 @@
-import * as React from 'react';
+import React from 'react';
 import cx from 'clsx';
 
-export type RenderIconButtonProps = {
+type RenderIconButtonProps = {
   className: string;
   children: React.ReactNode;
 };
 
-export type IconButtonProps = React.ComponentPropsWithoutRef<'button'> & {
+type IconButtonProps = React.ComponentPropsWithoutRef<'button'> & {
   children: React.ReactNode;
   className?: string;
   render?: (

@@ -1,7 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 import cx from 'clsx';
 
-export type DividerProps = React.ComponentPropsWithoutRef<'div'> & {
+type DividerProps = React.ComponentPropsWithoutRef<'div'> & {
   color: 'primary' | 'secondary';
 };
 

@@ -1,5 +1,5 @@
+import React from 'react';
 import { SectionTitle as Title } from '../components/section-title';
-import { NextComponentType } from 'next';
 
 export type SectionLayoutProps = {
   children: React.ReactNode;
@@ -7,11 +7,11 @@ export type SectionLayoutProps = {
   subtitle?: string;
 };
 
-export const SectionLayout: NextComponentType<{}, {}, SectionLayoutProps> = ({
+export function SectionLayout({
   children,
   title,
   subtitle,
-}) => {
+}: SectionLayoutProps) {
   return (
     <section className="pb-24">
       {title && subtitle && (
@@ -22,4 +22,4 @@ export const SectionLayout: NextComponentType<{}, {}, SectionLayoutProps> = ({
       {children}
     </section>
   );
-};
+}

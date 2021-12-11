@@ -1,16 +1,13 @@
-import { NextComponentType } from 'next';
+import React from 'react';
 import { PageTitle as Title } from '../components/page-title';
 
 export type PageLayoutProps = {
+  children: React.ReactNode;
   title?: string;
   subtitle?: string;
 };
 
-export const PageLayout: NextComponentType<{}, {}, PageLayoutProps> = ({
-  children,
-  title,
-  subtitle,
-}) => {
+export function PageLayout({ children, title, subtitle }: PageLayoutProps) {
   return (
     <div className="mt-36">
       {title && subtitle && (
@@ -21,4 +18,4 @@ export const PageLayout: NextComponentType<{}, {}, PageLayoutProps> = ({
       {children}
     </div>
   );
-};
+}
